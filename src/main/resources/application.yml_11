@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: portal
+  profiles:
+    active: dev #默认为开发环境
+
+
+server:
+  host: 127.0.0.1
+  port: 8080
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://${BRTP_EUREKA_INSTANCE_HOSTNAME:localhost}:${BRTP_EUREKA_SERVER_PORT:8079}/eureka
+
+#ribbon:
+#  eureka:
+#    enabled: true
+#  ConnectionTimeout: 30000
+#  ReadTimeout: 60000
+
+#zuul:
+#  add-host-header: true
+#  retryable: false
+#  routes:
+#    node-service:
+#      path: /v1/node/**
+#      serviceId: node-service
+#    auth-service:
+#      path: /v1/auth/**
+#      serviceId: auth-service
+#      customSenstiveHeaders: true #传递HTTP头部敏感信息
+#      sensitiveHeaders:
+#    search-service:
+#      path: /v1/search/**
+#      serviceId: search-service
+
+mybatis:
+  mapper-locations:
+  - classpath:mapper/*.xml
+  - classpath*:com/**/mapper/*.xml
+
+#jwt:
+#  tokenHeader: Authorization #JWT存储的请求头
+#  secretKey: mySecret #JWT加解密使用的密钥
+#  expiration: 604800 #JWT的超期限时间(60*60*24)
+#  tokenHead: Bearer  #JWT负载中拿到开头 参见RFC 6750, Bearer令牌方式
+
+#securit:
